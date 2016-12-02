@@ -98,6 +98,7 @@
 		<th width="120">Title</th>
 		<th width="120">Description</th>
 		<th width="120">Year</th>
+		<th width="120">Category</th>
 		<th width="60">Edit</th>
 		<th width="60">Delete</th>
 	</tr>

@@ -108,6 +108,7 @@
 			<td>${book.title}</td>
 			<td>${book.description}</td>
 			<td>${book.year}</td>
+			<td>${book.category.name}</td>
 			<td><a href="<c:url value='/edit/${book.id}' />" >Редактировать</a></td>
 			<td><a href="<c:url value='/remove/${book.id}' />" >Удалить</a></td>
 		</tr>

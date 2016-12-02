@@ -41,6 +41,7 @@
         <beans:property name="annotatedClasses">
             <beans:list>
                 <beans:value>ru.rsue.bookslibrary.spring.model.Books</beans:value>
+                <beans:value>ru.rsue.bookslibrary.spring.model.Category</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class WebController {
-	
+
 	private BooksService booksService;
 	
 	@Autowired(required=true)
@@ -28,16 +28,13 @@ public class WebController {
 		model.addAttribute("listBooks", this.booksService.listBooks());
 		return "books";
 	}
-	
-	//For add and update person both
+
 	@RequestMapping(value= "/books/add", method = RequestMethod.POST)
 	public String addBook(@ModelAttribute("books") Books books){
 		
 		if(books.getId() == 0){
-			//new person, add it
 			this.booksService.addBook(books);
 		}else{
-			//existing person, call update
 			this.booksService.updateBook(books);
 		}
 		

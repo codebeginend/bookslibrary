@@ -21,6 +21,10 @@ public class Books {
 	private String description;
 	private String year;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_category")
+	private Category category;
+
 	public int getId() {
 		return id;
 	}
@@ -59,5 +63,12 @@ public class Books {
 
 	public void setYear(String year) {
 		this.year = year;
+	}
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }

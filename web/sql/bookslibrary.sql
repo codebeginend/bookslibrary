@@ -22,7 +22,7 @@
 DROP TABLE IF EXISTS `Books`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Books` (
+CREATE TABLE `bookslibrary`.`Books` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `author` varchar(45) DEFAULT NULL,
   `title` varchar(45) DEFAULT NULL,
@@ -39,20 +39,20 @@ CREATE TABLE `Books` (
 -- Dumping data for table `Books`
 --
 
-LOCK TABLES `Books` WRITE;
-/*!40000 ALTER TABLE `Books` DISABLE KEYS */;
-INSERT INTO `Books` VALUES (1,'zaur','java se','desc','1993',1),(2,'zaur','leonardo do vinchi','leonardo life','1452',2);
-/*!40000 ALTER TABLE `Books` ENABLE KEYS */;
+LOCK TABLES `bookslibrary`.`Books` WRITE;
+/*!40000 ALTER TABLE `bookslibrary`.`Books` DISABLE KEYS */;
+INSERT INTO `bookslibrary`.`Books` VALUES (1,'zaur','java se','desc','1993',1),(2,'zaur','leonardo do vinchi','leonardo life','1452',2);
+/*!40000 ALTER TABLE `bookslibrary`.`Books` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `bookslibrary`.`category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category` (
+CREATE TABLE `bookslibrary`.`category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -63,10 +63,10 @@ CREATE TABLE `category` (
 -- Dumping data for table `category`
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'programming'),(2,'history');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+LOCK TABLES `bookslibrary`.`category` WRITE;
+/*!40000 ALTER TABLE `bookslibrary`.`category` DISABLE KEYS */;
+INSERT INTO `bookslibrary`.`category` VALUES (1,'programming'),(2,'history');
+/*!40000 ALTER TABLE `bookslibrary`.`category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

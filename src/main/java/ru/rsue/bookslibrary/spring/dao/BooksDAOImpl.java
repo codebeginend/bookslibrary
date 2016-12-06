@@ -31,8 +31,6 @@ public class BooksDAOImpl implements BooksDAO {
 	public List<Books> listBooks() {
 		Session session = this.sessionFactory.getCurrentSession();
 		List<Books> booksList = session.createQuery("from Books").list();
-		for(Books books : booksList){
-		}
 		return booksList;
 	}
 

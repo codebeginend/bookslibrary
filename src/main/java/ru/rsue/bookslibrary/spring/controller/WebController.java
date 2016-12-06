@@ -1,6 +1,7 @@
 package ru.rsue.bookslibrary.spring.controller;
 
 import ru.rsue.bookslibrary.spring.model.Books;
+import ru.rsue.bookslibrary.spring.model.Category;
 import ru.rsue.bookslibrary.spring.service.BooksService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,6 +26,7 @@ public class WebController {
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public String listBooks(Model model) {
 		model.addAttribute("books", new Books());
+		model.addAttribute("books", new Category());
 		model.addAttribute("listBooks", this.booksService.listBooks());
 		return "books";
 	}

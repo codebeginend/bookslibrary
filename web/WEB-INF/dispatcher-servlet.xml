@@ -59,6 +59,13 @@
     <beans:bean id="booksService" class="ru.rsue.bookslibrary.spring.service.BooksServiceImpl">
         <beans:property name="booksDAO" ref="booksDAO"></beans:property>
     </beans:bean>
+
+    <beans:bean id="categoryesDAO" class="ru.rsue.bookslibrary.spring.dao.CategoryesDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="categoryesService" class="ru.rsue.bookslibrary.spring.service.CategoryesServiceImpl">
+        <beans:property name="categoryesDAO" ref="categoryesDAO"/>
+    </beans:bean>
     <context:component-scan base-package="ru.rsue.bookslibrary.spring.*" />
 
     <tx:annotation-driven transaction-manager="transactionManager"/>

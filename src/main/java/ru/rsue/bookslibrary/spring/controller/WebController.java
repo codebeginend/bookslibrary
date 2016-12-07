@@ -11,22 +11,29 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.rsue.bookslibrary.spring.service.CategoryesService;
 
 @Controller
 public class WebController {
 
 	private BooksService booksService;
+	private CategoryesService categoryesService;
 	
 	@Autowired(required=true)
 	@Qualifier(value="booksService")
 	public void setBooksService(BooksService booksService){
 		this.booksService = booksService;
 	}
+	@Autowired(required = true)
+	@Qualifier(value = "categoryesService")
+	public void setCategoryesService(CategoryesService categoryesService){
+		this.categoryesService = categoryesService;
+	}
 	
 	@RequestMapping(value = "/books", method = RequestMethod.GET)
 	public String listBooks(Model model) {
 		model.addAttribute("books", new Books());
-		model.addAttribute("books", new Category());
+		model.addAttribute("listCategoryes", this.categoryesService.listCategoryes());
 		model.addAttribute("listBooks", this.booksService.listBooks());
 		return "books";
 	}

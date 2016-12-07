@@ -76,16 +76,18 @@
 	</tr>
 	<tr>
 		<td>
-			<form:label path="id_category">
-				<spring:message text="id_category"/>
+			<form:label path="category.id">
+				<spring:message text="Category"/>
 			</form:label>
 		</td>
 		<td>
-			<form:select path="id_category">
-					<form:options items="${listCategoryes}" itemValue="id" itemLabel="name" />
+			<form:select multiple="true" path="category.id" id="listCategoryes">
+				<form:options items="${listCategoryes}" itemValue="id" itemLabel="name" />
 			</form:select>
 		</td>
 	</tr>
+
+
 
 		<td colspan="2">
 			<c:if test="${!empty books.author}">

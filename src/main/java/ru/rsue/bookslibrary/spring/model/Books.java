@@ -21,7 +21,7 @@ public class Books {
 	private String description;
 	private String year;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name="id_category")
 	private Category category;
 

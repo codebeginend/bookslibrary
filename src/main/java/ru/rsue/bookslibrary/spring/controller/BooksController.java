@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ru.rsue.bookslibrary.spring.service.CategoryesService;
 
 @Controller
+@RequestMapping(value = "admin")
 public class BooksController {
 	private BooksService booksService;
 	private CategoryesService categoryesService;

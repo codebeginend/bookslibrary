@@ -13,6 +13,12 @@
 	<script src="<c:url value="/resources/js/npm.js" />"></script>
 </head>
 <body>
+	<div class="container">
+		<ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="books">Книги</a></li>
+			<li role="presentation"><a href="categories">Категории</a></li>
+		</ul>
+	</div>
 <h1>
 	Добавить книгу
 </h1>
@@ -102,31 +108,35 @@
 </form:form>
 <br>
 <h3>Список книг</h3>
+<div class="container">
 <c:if test="${!empty listBooks}">
-	<table class="tg">
-	<tr>
-		<th width="80">ID</th>
-		<th width="120">Author</th>
-		<th width="120">Title</th>
-		<th width="120">Description</th>
-		<th width="120">Year</th>
-		<th width="120">Category</th>
-		<th width="60">Edit</th>
-		<th width="60">Delete</th>
-	</tr>
-	<c:forEach items="${listBooks}" var="book">
-		<tr>
-			<td>${book.id}</td>
-			<td>${book.author}</td>
-			<td>${book.title}</td>
-			<td>${book.description}</td>
-			<td>${book.year}</td>
-			<td>${book.category.name}</td>
-			<td><a href="<c:url value='/edit/${book.id}' />" >Редактировать</a></td>
-			<td><a href="<c:url value='/remove/${book.id}' />" >Удалить</a></td>
-		</tr>
-	</c:forEach>
+	<table class="table">
+		<thead class="thead-">
+			<tr>
+				<th>#</th>
+				<th>Автоп</th>
+				<th>Наименование</th>
+				<th>Описание</th>
+				<th>Год</th>
+				<th>Категория</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${listBooks}" var="book">
+				<tr>
+					<td scope="row">${book.id}</td>
+					<td>${book.author}</td>
+					<td>${book.title}</td>
+					<td>${book.description}</td>
+					<td>${book.year}</td>
+					<td>${book.category.name}</td>
+					<td><a href="<c:url value='/edit/${book.id}' />"  class="glyphicon glyphicon-pencil"></a></td>
+					<td><a href="<c:url value='/remove/${book.id}'/>"  class="glyphicon glyphicon-trash"></a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
 	</table>
 </c:if>
+</div>
 </body>
 </html>

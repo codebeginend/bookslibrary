@@ -35,7 +35,7 @@ public class BooksController {
 		model.addAttribute("books", new Books());
 		model.addAttribute("listCategoryes", this.categoryesService.listCategoryes());
 		model.addAttribute("listBooks", this.booksService.listBooks());
-		return "books";
+		return "admin/books";
 	}
 
 	@RequestMapping(value= "/books/add", method = RequestMethod.POST)
@@ -45,19 +45,19 @@ public class BooksController {
 		}else{
 			this.booksService.updateBook(books);
 		}
-		return "redirect:/books";
+		return "redirect:/admin/books";
 	}
 	@RequestMapping("/remove/{id}")
     public String removeBook(@PathVariable("id") int id){
         this.booksService.removeBook(id);
-        return "redirect:/books";
+        return "redirect:/admin/books";
     }
     @RequestMapping("/edit/{id}")
     public String editBook(@PathVariable("id") int id, Model model){
         model.addAttribute("books", this.booksService.getBookById(id));
         model.addAttribute("listBooks", this.booksService.listBooks());
 		model.addAttribute("listCategoryes", this.categoryesService.listCategoryes());
-        return "books";
+        return "admin/books";
     }
 	
 }
